@@ -1,0 +1,26 @@
+{
+  "name": "firecrawl-s3-lambda",
+  "version": "0.0.1",
+  "description": "AWS Lambda that reads web documents via Firecrawl and stores the scraped content in S3.",
+  "main": "src/scrape-lambda.ts",
+  "license": "MIT",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "build": "esbuild src/scrape-lambda.ts --bundle --platform=node --target=node22 --format=cjs --outfile=dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "invoke:local": "tsx --env-file=.env.local -e \"import('./src/scrape-lambda').then(m => m.handler({ url: process.argv[2] }, {} as any, () => {}))\""
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.164",
+    "@types/node": "^22.13.0",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1153.0",
+    "@mendable/firecrawl-js": "^1.16.0"
+  }
+}
