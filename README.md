@@ -1,4 +1,4 @@
-# Firecrawl S3 Lambda
+# AWSAgenticResearch
 
 An AWS Lambda function that reads a single web document using [Firecrawl](https://firecrawl.dev) and stores the scraped content in an S3 bucket.
 

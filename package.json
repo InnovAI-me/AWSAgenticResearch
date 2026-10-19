@@ -1,5 +1,5 @@
 {
-  "name": "firecrawl-s3-lambda",
+  "name": "aws-agentic-research",
   "version": "0.0.1",
   "description": "AWS Lambda that reads web documents via Firecrawl and stores the scraped content in S3.",
   "main": "src/scrape-lambda.ts",
